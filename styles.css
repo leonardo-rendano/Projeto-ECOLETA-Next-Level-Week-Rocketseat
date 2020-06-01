@@ -1,15 +1,74 @@
+
+:root {
+  --title-color: #322153;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-family: 'Roboto', sans-serif;
 }
 
-header{ 
+body {
+  background: #f0f0f5;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--title-color);
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#page-home {
+  height: 100vh;
+  background: url('extras-aula-1/icones/home-background.svg') no-repeat;
+  background-position: 35vw bottom;
+}
+
+#page-home .content {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#page-home header{ 
+  margin-top: 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.content {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
+#page-home header a {
+  display: flex;
+  color: var(--title-color);
+  font-weight: 700;
+}
+
+#page-home header a span {
+  background-image: url('extras-aula-1/icones/log-in.svg');
+  display: flex;
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+}
+
+#page-home main {
+  max-width: 560px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#page-home h1 {
+  font-size: 54px;
 }
