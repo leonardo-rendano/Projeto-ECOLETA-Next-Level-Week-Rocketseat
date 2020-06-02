@@ -16,6 +16,10 @@ html {
 body {
   background: #f0f0f5;
   -webkit-font-smoothing: antialiased;
+  background: #2980B9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 a {
@@ -30,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 #page-home {
   height: 100vh;
   background: url('extras-aula-1/icones/home-background.svg') no-repeat;
-  background-position: 35vw bottom;
+  background-position: 42vw bottom;
 }
 
 #page-home .content {
