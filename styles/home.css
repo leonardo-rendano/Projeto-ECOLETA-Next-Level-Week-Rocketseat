@@ -1,39 +1,6 @@
-
-:root {
-  --title-color: #322153;
-  --primary-color: #34cb79;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-family: 'Roboto', sans-serif;
-}
-
-body {
-  background: #f0f0f5;
-  -webkit-font-smoothing: antialiased;
-  background: #2980B9;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-
-a {
-  text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--title-color);
-  font-family: 'Ubuntu', sans-serif;
-}
-
 #page-home {
   height: 100vh;
-  background: url('extras-aula-1/icones/home-background.svg') no-repeat;
+  background: url('../extras-aula-1/icones/home-background.svg') no-repeat;
   background-position: 42vw bottom;
 }
 
@@ -60,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #page-home header a span {
-  background-image: url('extras-aula-1/icones/log-in.svg');
+  background-image: url('../extras-aula-1/icones/log-in.svg');
   display: flex;
   width: 20px;
   height: 20px;
@@ -114,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #page-home main a span::after {
   content: "";
-  background-image: url('extras-aula-1/icones/search.svg');
+  background-image: url('../extras-aula-1/icones/search.svg');
   width: 20px;
   height: 20px;
 }
@@ -125,24 +92,3 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-@media (max-width: 900px) {
-  #page-home {
-    background-position-x: 70vw;
-  }
-  
-  #page-home content {
-    align-items: center;
-    text-align: center;
-  }
-
-  #page-home header a {
-    position: absolute;
-    bottom: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  #page-home main {
-    align-items: center;
-  }
-}
