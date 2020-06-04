@@ -6,16 +6,24 @@ const server = express()
 server.use(express.static("public"))
 
 
+// UTILIZANDO TEMPLATE ENGINES
+const nunjucks = require("nunjucks")
+nunjucks.configure("src/views", {
+  express: server,
+  noCache: true
+})
+
+
 // CONFIGURAR CAMINHOS DA MINHA APLICAÇÃO
 // PÁGINA INICIAL
 // REQ: REQUISIÇÃO
 // RES: RESPOSTA
 server.get("/", (req, res) => {
-  res.sendFile(__dirname + "/views/index.html")
+  return res.render("index.html")
 })
 
 server.get("/create-point", (req, res) => {
-  res.sendFile(__dirname + "/views/create-point.html")
+  return res.render("create-point.html")
 })
 
 // LIGAR O SERVIDOR
