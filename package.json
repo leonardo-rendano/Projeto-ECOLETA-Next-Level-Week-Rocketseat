@@ -4,7 +4,7 @@
   "description": "Projeto realizado pela Rocketseat durante a NLW - Next Level Week  O objetivo deste projeto é aperfeiçoar o conteúdo já aprendizado nas tecnologias citadas (HTML5, CSS3 e Javascript) e aplicar o conhecimento em projetos futuros.",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/leonardo-rendano/Projeto-ECOLETA---Next-Level-Week---Rocketseat#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
