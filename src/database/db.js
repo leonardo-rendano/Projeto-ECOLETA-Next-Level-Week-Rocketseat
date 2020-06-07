@@ -55,10 +55,20 @@ db.serialize( () => {
     console.log(this)
   }
 
-  db.run(query, values, afterInsertData)
-
+  //db.run(query, values, afterInsertData)
 
   //3. CONSULTAR OS DADOS DA TABELA
+  db.all(`SELECT * FROM places`, function(err, rows) {
+    if(err) {
+      return console.log(err)
+    }
+
+    console.log("Aqui estão seus registros: ")
+    console.log(rows)
+  })
+
+
+
 
   //4. DELETAR UM DADO DA TABELA
 
