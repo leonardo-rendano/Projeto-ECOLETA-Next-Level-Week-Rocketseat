@@ -1,40 +1,40 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/main.css">
+{% extends "layout.html" %}
+
+{% set pageId = "page-home" %}
+
+{% block styles %}
   <link rel="stylesheet" href="styles/home.css">
   <link rel="stylesheet" href="styles/modal.css">
-  <link rel="stylesheet" href="styles/responsive.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+{% endblock styles %}
 
-  <title>Projeto ECOLETA - Next Level Week</title>
-</head>
-<body>
-
-  <div id="page-home">
-
-    <div class="content">
-      <header>
-        <img src="extras-aula-1/icones/logo.svg" alt="Logomarca">
-        <a href="create-point">
-          <span></span>
-          Cadastre um ponto de coleta
-        </a>
-      </header>
-      <main>
-       <h1>Seu marketplace de coleta de resíduos</h1>
-          <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>  
-        <a href="#"><span></span><strong>Pesquisar pontos de coleta</strong></a>
-      </main>
-    </div>
-
+  
+{% block content %}
+  <div class="content">
+    <header>
+      <img src="extras-aula-1/icones/logo.svg" alt="Logomarca">
+      <a href="create-point">
+        <span></span>
+        Cadastre um ponto de coleta
+      </a>
+    </header>
+    <main>
+    <h1>Seu marketplace de coleta de resíduos</h1>
+        <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>  
+      <a href="#"><span></span><strong>Pesquisar pontos de coleta</strong></a>
+    </main>
   </div>
+{% endblock content%}
 
-  {% include "partials/modal.html" %}
+    
+  {% block modal %}
+    {% include "partials/modal.html" %}
+  {% endblock modal %}
 
-  <script src="/scripts/index.js"></script>
 
-</body>
-</html>
+  {% block scripts %}
+    <script src="/scripts/index.js"></script>
+  {% endblock scripts %}
+  
+
+  
+
