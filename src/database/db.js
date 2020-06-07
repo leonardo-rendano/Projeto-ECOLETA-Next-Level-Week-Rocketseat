@@ -5,6 +5,8 @@ const sqlite3 = require("sqlite3").verbose()
 // CRIAR O OBJETO IRÁ FAZER OPERAÇÕES NO BANCO DE DADOS
 const db = new sqlite3.Database("./src/database/database.db")
 
+module.exports = db
+
 // UTILIZAR O OBJETO DE BANCO DE DADOS PARA NOSSAS OPERAÇÕES
 db.serialize( () => {
   //com comandos sql eu vou:
@@ -67,9 +69,13 @@ db.serialize( () => {
     console.log(rows)
   })
 
-
-
-
   //4. DELETAR UM DADO DA TABELA
+  db.run(`DELETE FROM places WHERE id = ?`, [1], function(err) {
+    if(err) {
+      return console.log(err)
+    }
+
+    console.log("Registro deletado com sucesso!")
+  }) //ESTA FUNÇÃO FAZ PARTE DA APLICAÇÃO APENAS DE ESTUDO DA FUNÇÃO "DELETE" E NÃO SERÁ USADA NA APLICAÇÃO!!
 
 })
