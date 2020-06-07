@@ -26,17 +26,36 @@ db.serialize( () => {
   //2. INSERIR DADOS NA 
   const query = (`
     INSERT INTO places (
-      imagem,
+      image,
       name,
       address,
       address2,
+      state,
       city,
       items        
     ) VALUES (?,?,?,?,?,?,?);
   `)
-  db.run(query, [
-    ""
-  ])
+
+  const values = [
+    "https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1401&q=80",
+    "Colectoria",
+    "Guilherme Gemballa, Jardim América",
+    "Nº 260",
+    "Santa Catarina",
+    "Rio do Sul",
+    "Resíduos Eletrônicos, Lâmpadas"
+  ]
+
+  function afterInsertData(err) {
+    if(err) {
+      return console.log(err)
+    }
+
+    console.log("Cadastrado com sucesso")
+    console.log(this)
+  }
+
+  db.run(query, values, afterInsertData)
 
 
   //3. CONSULTAR OS DADOS DA TABELA
