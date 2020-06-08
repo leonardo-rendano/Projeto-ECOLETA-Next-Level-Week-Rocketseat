@@ -3,7 +3,7 @@ const express = require("express")
 const server = express()
 
 //PEGAR O BANCO DE DADOS
-const db = require("./database/db")
+const db = require("./database/db.js")
 
 
 // CONFIGURAR PASTA PÚBLICA
@@ -38,8 +38,10 @@ server.get("/search", (req, res) => {
       return console.log(err)
     }
 
+    const total = rows.length
+
     // MOSTRAR A PÁGINA HTML COM OS DADOS DO BANCO DE DADOS
-    return res.render("search-results.html", { places: rows })
+    return res.render("search-results.html", { places: rows, total: total })
   })
 })
 
