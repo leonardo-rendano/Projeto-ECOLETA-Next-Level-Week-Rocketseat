@@ -9,6 +9,9 @@ const db = require("./database/db.js")
 // CONFIGURAR PASTA PÚBLICA
 server.use(express.static("public"))
 
+//HABILITAR O USO DO REQBODY NA NOSSA APLICAÇÃO
+server.use(express.urlencoded({ extended: true }))
+
 
 // UTILIZANDO TEMPLATE ENGINES
 const nunjucks = require("nunjucks")
@@ -29,14 +32,54 @@ server.get("/", (req, res) => {
 server.get("/create-point", (req, res) => {
 
   //REQ.QUERY: QUERY STRINGS DA NOSSA URL
-  
+  //console.log(req.query)
 
   return res.render("create-point.html")
 })
 
 server.post("/savepoint", (req, res) => {
-  return res.send("ok")
+
+  //REQ.BODY: O CORPO DO NOSSO FORMULÁRIO
+  //console.log(req.body)
+
+   //INSERIR DADOS NO BANCO DE DADOS
+  const query = (`
+    INSERT INTO places (
+      image,
+      name,
+      address,
+      address2,
+      state,
+      city,
+      items        
+    ) VALUES (?,?,?,?,?,?,?);
+  `)
+
+  const values = [
+   req.body.image,
+   req.body.name,
+   req.body.address,
+   req.body.address2,
+   req.body.state,
+   req.body.city,
+   req.body.items
+  ]
+
+  function afterInsertData(err) {
+    if(err) {
+      return console.log(err)
+    }
+
+    console.log("Cadastrado com sucesso")
+    console.log(this)
+
+    return res.send("ok")
+  }
+
+  db.run(query, values, afterInsertData)
 })
+
+
 
 server.get("/search", (req, res) => {
 
